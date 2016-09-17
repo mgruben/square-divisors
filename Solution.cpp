@@ -14,27 +14,40 @@ private:
                 if (i != n/i) ans.push_back(n/i);
             }
         }
+        for (int d: ans) cout << d << endl;
         return ans;
     }
-
-    static bool sumIsSquare(long long n) {
-        vector<int> v = divisors(n);
-        long long sum = 0;
-        for (int i: v) sum += i;
-        long long s = sqrt(sum);
-        if (sum / s == s) return true;
-        else return false;
+    
+    static string toString(long long n, long long sum) {
+        string ans = "{";
+        ans += to_string(n);
+        ans += ", ";
+        ans += to_string(sum);
+        ans += "}";
+        return ans;
     }
+    
 public:
     static string listSquared(long long m, long long n) {
-        for int i = m; i <= n; i++) {
-            if (sumIsSquare(i));
+        string ans = "{";
+        for (long long i = m; i <= n; i++) {
+            vector<int> v = divisors(i);
+            long long sum = 0;
+            for (int i: v) sum += i*i;
+            double s = sqrt(sum);
+            if ((double) sum / s == s) {
+                cout << "eee" << endl;
+                ans += toString(i, sum);
+                ans += ", ";
+            }
         }
+        ans += "}";
+        return ans;
     }
 };
 
 int main() {
     SumSquaredDivisors s;
-    s.listSquared(42,42);
+    cout << s.listSquared(41,43) << endl;
     return 0;
 }
