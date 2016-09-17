@@ -34,7 +34,7 @@ public:
             long long sum = 0;
             for (int i: v) sum += i*i;
             double s = sqrt(sum);
-            if ((double) sum / s == s) {
+            if (fmod(sum, s) == 0) {
                 ans += toString(i, sum);
                 ans += ", ";
             }
@@ -45,6 +45,6 @@ public:
 
 int main() {
     SumSquaredDivisors s;
-    cout << s.listSquared(41,43) << endl;
+    cout << s.listSquared(1,42) << endl;
     return 0;
 }
