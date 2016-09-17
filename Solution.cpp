@@ -14,7 +14,6 @@ private:
                 if (i != n/i) ans.push_back(n/i);
             }
         }
-        for (int d: ans) cout << d << endl;
         return ans;
     }
     
@@ -36,7 +35,6 @@ public:
             for (int i: v) sum += i*i;
             double s = sqrt(sum);
             if ((double) sum / s == s) {
-                cout << "eee" << endl;
                 ans += toString(i, sum);
                 ans += ", ";
             }
