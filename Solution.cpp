@@ -41,8 +41,7 @@ public:
                 ans += ", ";
             }
         }
-        ans += "}";
-        return ans;
+        return ans.substr(0, ans.length() - 2) + "}";
     }
 };
 
