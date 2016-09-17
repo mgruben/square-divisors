@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <math.h>
 using namespace std;
 
 class SumSquaredDivisors
@@ -16,15 +17,19 @@ private:
         return ans;
     }
 
+    static bool sumIsSquare(long long n) {
+        vector<int> v = divisors(n);
+        long long sum = 0;
+        for (int i: v) sum += i;
+        long long s = sqrt(sum);
+        if (sum / s == s) return true;
+        else return false;
+    }
 public:
     static string listSquared(long long m, long long n) {
-        vector<int> ems = divisors(m);
-        vector<int> ens = divisors(n);
-        cout << "Factors of m:" << endl;
-        for (int i: ems) cout << i << endl;
-        cout << "Factors of n:" << endl;
-        for (int i: ens) cout << i << endl;
-        return "";
+        for int i = m; i <= n; i++) {
+            if (sumIsSquare(i));
+        }
     }
 };
 
